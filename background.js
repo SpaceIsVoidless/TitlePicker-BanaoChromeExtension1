@@ -58,9 +58,9 @@ async function processNextUrl() {
     try {
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        files: ['smartScraper.js']
+        files: ['contentScript.js']
       });
-      console.log('Smart scraper injected successfully for:', username);
+      console.log('Content script injected successfully for:', username);
     } catch (error) {
       console.error('Error injecting smart scraper:', error);
       notifyPopup('scrapingError', 'Failed to inject script: ' + error.message);
